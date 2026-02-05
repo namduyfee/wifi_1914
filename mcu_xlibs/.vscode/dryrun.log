@@ -1,0 +1,6 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'e:/1.work/2.Solantech/1.firework/220415/firework_esp8266_rtos/components/mcu_xlibs'
+make: Leaving directory 'e:/1.work/2.Solantech/1.firework/220415/firework_esp8266_rtos/components/mcu_xlibs'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

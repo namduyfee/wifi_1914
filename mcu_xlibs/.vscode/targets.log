@@ -1,0 +1,301 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.3
+# Built for Windows32
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sun Jun 12 17:46:04 2022
+
+# Variables
+
+# environment
+SYSTEMDRIVE = C:
+# environment
+JAVA_HOME = C:\Program Files\Java\jdk-17.0.2
+# environment
+LC_ALL = C
+# environment
+VBOX_HWVIRTEX_IGNORE_SVM_IN_USE = 1
+# environment
+USERPROFILE = C:\Users\Bitscat
+# environment
+IDF_PATH = C:\msys32\home\Bitscat\esp\ESP8266_RTOS_SDK
+# environment
+LOCALAPPDATA = C:\Users\Bitscat\AppData\Local
+# environment
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-bc54ca7e-ab47-44f8-b5b4-dbc49412722a-sock
+# environment
+VSCODE_CWD = E:\1.work\2.Solantech\1.firework\220415\firework_esp8266_rtos\components\mcu_xlibs
+# environment
+SYSTEMROOT = C:\Windows
+# environment
+PROCESSOR_LEVEL = 23
+# environment
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+# default
+MAKE_COMMAND := make.exe
+# automatic
+@D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_16152_DGGFTDFRAFUFWMDE
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# automatic
+%D = $(patsubst %/,%,$(patsubst %\,%,$(dir $%)))
+# automatic
+^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\Bitscat\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+LANG = C
+# environment
+OMP_NUM_THREADS = 16
+# default
+.LOADED := 
+# environment
+TMP = C:\Users\Bitscat\AppData\Local\Temp
+# default
+.INCLUDE_DIRS = .
+# environment
+PROCESSOR_ARCHITEW6432 = AMD64
+# makefile
+MAKEFLAGS = pqrR
+# environment
+ONEDRIVE = C:\Users\Bitscat\OneDrive
+# makefile
+CURDIR := e:/1.work/2.Solantech/1.firework/220415/firework_esp8266_rtos/components/mcu_xlibs
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
+*D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
+# environment
+PROGRAMFILES = C:\Program Files (x86)
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# automatic
++D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
+# environment
+IDF_TOOLS_PATH = C:\Espressif
+# makefile
+MAKEFILE_LIST := 
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 16152
+# automatic
+?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
+# environment
+C_EM64T_REDIST11 = C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\
+# automatic
+*F = $(notdir $*)
+# automatic
+<D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+ONEDRIVECONSUMER = C:\Users\Bitscat\OneDrive
+# default
+MAKE_HOST := Windows32
+# environment
+ANDROID_HOME = C:\Users\Bitscat\AppData\Local\Android\Sdk
+# environment
+PROGRAMDATA = C:\ProgramData
+# default
+SHELL := C:/Program Files/Git/usr/bin/sh.exe
+# environment
+HOMEPATH = \Users\Bitscat
+# environment
+PLATFORMIO_CALLER = vscode
+# default
+MAKECMDGOALS := all
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+COMSPEC = C:\Windows\system32\cmd.exe
+# environment
+WINDIR = C:\Windows
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\Program Files (x86)\STMicroelectronics\st_toolset\asm;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\dotnet\;C:\composer;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\xampp\php;C:\Program Files\Microchip\xc8\v2.36\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Bitscat\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Bitscat\AppData\Local\Programs\Python\Python310\;C:\Users\Bitscat\AppData\Local\Microsoft\WindowsApps;C:\Users\Bitscat\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Bitscat\.dotnet\tools;C:\Users\Bitscat\AppData\Roaming\Composer\vendor\bin;C:\flutter\bin;C:\msys64\usr\bin;C:\msys64\mingw64\bin;C:\msys32\opt\xtensa-lx106-elf\bin;
+# environment
+COMPUTERNAME = DESKTOP-QPV1UC3
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+PROMPT = $P$G
+# environment
+LOGONSERVER = \\DESKTOP-QPV1UC3
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+USERNAME = Bitscat
+# environment
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# automatic
+?F = $(notdir $?)
+# environment
+PROGRAMW6432 = C:\Program Files
+# environment
+NO_PROXY = 127.0.0.1
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# automatic
++F = $(notdir $+)
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERDOMAIN = DESKTOP-QPV1UC3
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+OS = Windows_NT
+# environment
+PLATFORMIO_PATH = C:\Users\Bitscat\.platformio\python3;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\Program Files (x86)\STMicroelectronics\st_toolset\asm;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\dotnet\;C:\composer;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\xampp\php;C:\Program Files\Microchip\xc8\v2.36\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Bitscat\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Bitscat\AppData\Local\Programs\Python\Python310\;C:\Users\Bitscat\AppData\Local\Microsoft\WindowsApps;C:\Users\Bitscat\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Bitscat\.dotnet\tools;C:\Users\Bitscat\AppData\Roaming\Composer\vendor\bin;C:\flutter\bin;C:\msys64\usr\bin;C:\msys64\mingw64\bin;C:\msys32\opt\xtensa-lx106-elf\bin;;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\Program Files (x86)\STMicroelectronics\st_toolset\asm;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\dotnet\;C:\composer;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\xampp\php;C:\Program Files\Microchip\xc8\v2.36\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Bitscat\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Bitscat\AppData\Local\Programs\Python\Python310\;C:\Users\Bitscat\AppData\Local\Microsoft\WindowsApps;C:\Users\Bitscat\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Bitscat\.dotnet\tools;C:\Users\Bitscat\AppData\Roaming\Composer\vendor\bin;C:\flutter\bin;C:\msys64\usr\bin;C:\msys64\mingw64\bin;C:\msys32\opt\xtensa-lx106-elf\bin;
+# makefile
+.DEFAULT_GOAL := 
+# default
+MAKE_VERSION := 4.3
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# environment
+USERDOMAIN_ROAMINGPROFILE = DESKTOP-QPV1UC3
+# environment
+NUMBER_OF_PROCESSORS = 16
+# environment
+PUBLIC = C:\Users\Public
+# environment
+ASL.LOG = Destination=file
+# environment
+APPDATA = C:\Users\Bitscat\AppData\Roaming
+# environment
+HOMEDRIVE = C:
+# environment
+PROCESSOR_ARCHITECTURE = x86
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+PLATFORMIO_IDE = 2.4.3
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+TEMP = C:\Users\Bitscat\AppData\Local\Temp
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\5e084b36d701c8f4af0df0decca38f9d-1.67.2-main-sock
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# environment
+SESSIONNAME = Console
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
+# environment
+PROCESSOR_REVISION = 0802
+# environment
+PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD
+# variable set hash-table stats:
+# Load=105/1024=10%, Rehash=0, Collisions=12/128=9%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (key e:/1.work/2.Solantech/1.firework/220415/firework_esp8266_rtos/components/mcu_xlibs, mtime 1654960401): 11 files, no impossibilities.
+
+# 11 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+makefile.mak:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# files hash-table stats:
+# Load=7/1024=1%, Rehash=0, Collisions=0/16=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 18 / storage = 159 B / avg = 8 B
+# current buf: size = 8174 B / used = 159 B / count = 18 / avg = 8 B
+
+# strcache performance: lookups = 21 / hit rate = 14%
+# hash-table stats:
+# Load=18/8192=0%, Rehash=0, Collisions=0/21=0%
+# Finished Make data base on Sun Jun 12 17:46:04 2022
+
+ 
