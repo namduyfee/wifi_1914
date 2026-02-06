@@ -59,6 +59,18 @@
 
 #define USC_ALL_MASK    (GPIO1903_DI_CH0_BIT_MASK|GPIO1903_DI_CH1_BIT_MASK)
 
+/* ------------ Define 1914 ------------ */
+#define GPIO_1914_PORT_SET          (GPIO->out_set)
+#define GPIO_1914_PORT_CLR          (GPIO->out_clear)
+
+#define GPIO_1914_DI_CH0            4
+#define GPIO_1914_DI_CH1            5
+
+#define GPIO1914_DI_CH0_BIT_MASK    (1ULL << GPIO_1914_DI_CH0)
+#define GPIO1914_DI_CH1_BIT_MASK    (1ULL << GPIO_1914_DI_CH1)
+
+#define IC1914_ALL_MASK    (GPIO1914_DI_CH0_BIT_MASK|GPIO1914_DI_CH1_BIT_MASK)
+
 /* ------------ Define 6803 ------------ */
 #define GPIO_6803_DAT_PORT_SET      (GPIO->out_set)
 #define GPIO_6803_DAT_PORT_CLR      (GPIO->out_clear)

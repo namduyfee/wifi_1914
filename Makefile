@@ -32,7 +32,7 @@ ESPTOOL		?= tools/esptool/esptool.py
 MONITORTOOL	?= tools/idf_monitor.py
 BUILDFSTOOL	?= tools/tool-mkspiffs/mkspiffs.exe
 
-XTENSA_DIR		?= E:\\ProjectNam\\xtensa-lx106-elf\\bin\\
+XTENSA_DIR		?= D:\\xtensa-lx106-elf\\bin\\
 XTENSA_PREFIX	?= $(XTENSA_DIR)xtensa-lx106-elf-
 CC			:= $(XTENSA_PREFIX)gcc
 LD			:= $(XTENSA_PREFIX)gcc
@@ -50,7 +50,7 @@ FS_BLOCK_SZ	= 8192
 FS_PAGE_SZ	= 256
 
 # Cấu hình cổng com
-FLASH_PORT		:= COM11
+FLASH_PORT		:= COM6
 
 # Cấu hình tốc độ serial debug
 SERIAL_BAUD		:= 76800
@@ -81,6 +81,7 @@ SRCS		+= ./source/http_parser/http_parser.c
 SRCS		+= ./source/http_server/http_server.c
 SRCS		+= ./source/websocket_parser/websocket_parser.c
 SRCS		+= ./source/ucs1903/ucs1903.c
+SRCS		+= ./source/ic1914/ic1914.c
 SRCS		+= ./source/lpd6803/lpd6803.c
 SRCS		+= ./source/strip_led/meteor.c
 SRCS		+= ./source/firework/firework.c
@@ -115,6 +116,7 @@ INC			+= ./source/http_parser
 INC			+= ./source/http_server
 INC			+= ./source/websocket_parser
 INC			+= ./source/ucs1903
+INC			+= ./source/ic1914
 INC			+= ./source/lpd6803
 INC			+= ./source/strip_led
 INC			+= ./source/firework

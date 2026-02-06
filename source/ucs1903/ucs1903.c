@@ -31,212 +31,63 @@
                             asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); \
                             asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
 
-    __attribute__((section(".text"))) void ucs1903_update(Color_RGB_t *color_buf, uint16_t len, uint16_t full_len) {
-        // uint8_t idx_bit = 0;
-        // uint16_t idx_dev_serial = 0;
-        // uint32_t color_to_io = 0;
 
-        // /**
-        //  * @brief Vô hiệu hóa tất cả các ngắt và task 
-        //  */
-        // disable_all_interrupts();
-        // for(idx_dev_serial = 0; idx_dev_serial < len; idx_dev_serial++) {
-        //     for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
-        //         /* Set cả bus lên 1 */
-        //         UCS_PORT_SET(USC_ALL_MASK);
-        //         if((color_buf[idx_dev_serial].R & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
-        //         if((color_buf[1 * full_len + idx_dev_serial].R & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
-        //         UCS_TIMMING_0;            
-        //         /* Đưa các chân bit màu = 0 xuống 0 */
-        //         UCS_PORT_CLR(color_to_io);
-        //         color_to_io = 0;
-        //         UCS_TIMMING_1;
-        //         /* Đưa cả bus xuống 0 */
-        //         UCS_PORT_CLR(USC_ALL_MASK);
-        //         UCS_TIMMING_2;
-        //     }
-        //     for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
-        //         /* Set cả bus lên 1 */
-        //         UCS_PORT_SET(USC_ALL_MASK);
-        //         if((color_buf[idx_dev_serial].G & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
-        //         if((color_buf[1 * full_len + idx_dev_serial].G & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
-        //         UCS_TIMMING_0;
-        //         /* Đưa các chân bit màu = 0 xuống 0 */
-        //         UCS_PORT_CLR(color_to_io);
-        //         color_to_io = 0;
-        //         UCS_TIMMING_1;
-        //         /* Đưa cả bus xuống 0 */
-        //         UCS_PORT_CLR(USC_ALL_MASK);
-        //         UCS_TIMMING_2;
-        //     }
-        //     for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
-        //         /* Set cả bus lên 1 */
-        //         UCS_PORT_SET(USC_ALL_MASK);
-        //     if((color_buf[idx_dev_serial].B & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
-        //         if((color_buf[1 * full_len + idx_dev_serial].B & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
-        //         UCS_TIMMING_0;
-        //         /* Đưa các chân bit màu = 0 xuống 0 */
-        //         UCS_PORT_CLR(color_to_io);
-        //         color_to_io = 0;
-        //         UCS_TIMMING_1;
-        //         /* Đưa cả bus xuống 0 */
-        //         UCS_PORT_CLR(USC_ALL_MASK);
-        //         UCS_TIMMING_2;
-        //     }
-        // }
-        // /**
-        //  * @brief Cho các ngắt và task hoạt động 
-        //  */
-        // allow_interrupts();
-    }
 
-static inline void led1914_send_start(void)
-{
-    uint8_t i, bit;
+__attribute__((section(".text"))) void ucs1903_update(Color_RGB_t *color_buf, uint16_t len, uint16_t full_len) {
+    uint8_t idx_bit = 0;
+    uint16_t idx_dev_serial = 0;
+    uint32_t color_to_io = 0;
 
-    for (i = 0; i < 6; i++)   // FF FF FF 00 00 00
-    {
-        uint8_t val = (i < 3) ? 0xFF : 0x00;
-
-        for (bit = 0x80; bit; bit >>= 1)
-        {
+    /**
+     * @brief Vô hiệu hóa tất cả các ngắt và task 
+     */
+    disable_all_interrupts();
+    for(idx_dev_serial = 0; idx_dev_serial < len; idx_dev_serial++) {
+        for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
+            /* Set cả bus lên 1 */
             UCS_PORT_SET(USC_ALL_MASK);
-            UCS_TIMMING_0;
-
-            if (val & bit)
-                UCS_PORT_CLR(USC_ALL_MASK);
+            if((color_buf[idx_dev_serial].R & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
+            if((color_buf[1 * full_len + idx_dev_serial].R & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
+            UCS_TIMMING_0;            
+            /* Đưa các chân bit màu = 0 xuống 0 */
+            UCS_PORT_CLR(color_to_io);
+            color_to_io = 0;
             UCS_TIMMING_1;
+            /* Đưa cả bus xuống 0 */
+            UCS_PORT_CLR(USC_ALL_MASK);
+            UCS_TIMMING_2;
+        }
+        for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
+            /* Set cả bus lên 1 */
+            UCS_PORT_SET(USC_ALL_MASK);
+            if((color_buf[idx_dev_serial].G & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
+            if((color_buf[1 * full_len + idx_dev_serial].G & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
+            UCS_TIMMING_0;
+            /* Đưa các chân bit màu = 0 xuống 0 */
+            UCS_PORT_CLR(color_to_io);
+            color_to_io = 0;
+            UCS_TIMMING_1;
+            /* Đưa cả bus xuống 0 */
+            UCS_PORT_CLR(USC_ALL_MASK);
+            UCS_TIMMING_2;
+        }
+        for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
+            /* Set cả bus lên 1 */
+            UCS_PORT_SET(USC_ALL_MASK);
+        if((color_buf[idx_dev_serial].B & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
+            if((color_buf[1 * full_len + idx_dev_serial].B & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
+            UCS_TIMMING_0;
+            /* Đưa các chân bit màu = 0 xuống 0 */
+            UCS_PORT_CLR(color_to_io);
+            color_to_io = 0;
+            UCS_TIMMING_1;
+            /* Đưa cả bus xuống 0 */
             UCS_PORT_CLR(USC_ALL_MASK);
             UCS_TIMMING_2;
         }
     }
+    /**
+     * @brief Cho các ngắt và task hoạt động 
+     */
+    allow_interrupts();
 }
-
-__attribute__((section(".text")))
-void ic1914_update(Color_RGB_t *color_buf, uint16_t len, uint16_t full_len)
-{
-        uint8_t idx_bit = 0;
-        uint16_t idx_dev_serial = 0;
-        uint32_t color_to_io = 0;
-
-        /**
-         * @brief Vô hiệu hóa tất cả các ngắt và task 
-         */
-        disable_all_interrupts();
-
-        led1914_send_start(); 
-
-        for(idx_dev_serial = 0; idx_dev_serial < len; idx_dev_serial++) {
-            for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
-                /* Set cả bus lên 1 */
-                UCS_PORT_SET(USC_ALL_MASK);
-                if((color_buf[idx_dev_serial].R & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
-                if((color_buf[1 * full_len + idx_dev_serial].R & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
-                UCS_TIMMING_0;            
-                /* Đưa các chân bit màu = 0 xuống 0 */
-                UCS_PORT_CLR(color_to_io);
-                color_to_io = 0;
-                UCS_TIMMING_1;
-                /* Đưa cả bus xuống 0 */
-                UCS_PORT_CLR(USC_ALL_MASK);
-                UCS_TIMMING_2;
-            }
-            for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
-                /* Set cả bus lên 1 */
-                UCS_PORT_SET(USC_ALL_MASK);
-                if((color_buf[idx_dev_serial].G & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
-                if((color_buf[1 * full_len + idx_dev_serial].G & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
-                UCS_TIMMING_0;
-                /* Đưa các chân bit màu = 0 xuống 0 */
-                UCS_PORT_CLR(color_to_io);
-                color_to_io = 0;
-                UCS_TIMMING_1;
-                /* Đưa cả bus xuống 0 */
-                UCS_PORT_CLR(USC_ALL_MASK);
-                UCS_TIMMING_2;
-            }
-            for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
-                /* Set cả bus lên 1 */
-                UCS_PORT_SET(USC_ALL_MASK);
-            if((color_buf[idx_dev_serial].B & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
-                if((color_buf[1 * full_len + idx_dev_serial].B & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
-                UCS_TIMMING_0;
-                /* Đưa các chân bit màu = 0 xuống 0 */
-                UCS_PORT_CLR(color_to_io);
-                color_to_io = 0;
-                UCS_TIMMING_1;
-                /* Đưa cả bus xuống 0 */
-                UCS_PORT_CLR(USC_ALL_MASK);
-                UCS_TIMMING_2;
-            }
-        }
-        /**
-         * @brief Cho các ngắt và task hoạt động 
-         */
-        allow_interrupts();
-}
-
-// __attribute__((section(".text")))
-// void ic1914_update(Color_RGB_t *color_buf, uint16_t len, uint16_t full_len)
-// {
-//         uint8_t idx_bit = 0;
-//         uint16_t idx_dev_serial = 0;
-//         uint32_t color_to_io = 0;
-
-//         /**
-//          * @brief Vô hiệu hóa tất cả các ngắt và task 
-//          */
-//         disable_all_interrupts();
-
-//         led1914_send_start(); 
-
-//         for(idx_dev_serial = 0; idx_dev_serial < len; idx_dev_serial++) {
-//             for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
-//                 /* Set cả bus lên 1 */
-//                 UCS_PORT_SET(USC_ALL_MASK);
-//                 if((color_buf[idx_dev_serial].R & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
-//                 if((color_buf[1 * full_len + idx_dev_serial].R & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
-//                 UCS_TIMMING_0;            
-//                 /* Đưa các chân bit màu = 0 xuống 0 */
-//                 UCS_PORT_SET(color_to_io);
-//                 color_to_io = 0;
-//                 UCS_TIMMING_1;
-//                 /* Đưa cả bus xuống 0 */
-//                 UCS_PORT_CLR(USC_ALL_MASK);
-//                 UCS_TIMMING_2;
-//             }
-//             for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
-//                 /* Set cả bus lên 1 */
-//                 UCS_PORT_SET(USC_ALL_MASK);
-//                 if((color_buf[idx_dev_serial].G & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
-//                 if((color_buf[1 * full_len + idx_dev_serial].G & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
-//                 UCS_TIMMING_0;
-//                 /* Đưa các chân bit màu = 0 xuống 0 */
-//                 UCS_PORT_SET(color_to_io);
-//                 color_to_io = 0;
-//                 UCS_TIMMING_1;
-//                 /* Đưa cả bus xuống 0 */
-//                 UCS_PORT_CLR(USC_ALL_MASK);
-//                 UCS_TIMMING_2;
-//             }
-//             for(idx_bit = 0x80; idx_bit != 0; idx_bit>>=1){
-//                 /* Set cả bus lên 1 */
-//                 UCS_PORT_SET(USC_ALL_MASK);
-//             if((color_buf[idx_dev_serial].B & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_0;
-//                 if((color_buf[1 * full_len + idx_dev_serial].B & idx_bit) == 0) color_to_io |= UCS_PIN_MASK_1;
-//                 UCS_TIMMING_0;
-//                 /* Đưa các chân bit màu = 0 xuống 0 */
-//                 UCS_PORT_SET(color_to_io);
-//                 color_to_io = 0;
-//                 UCS_TIMMING_1;
-//                 /* Đưa cả bus xuống 0 */
-//                 UCS_PORT_CLR(USC_ALL_MASK);
-//                 UCS_TIMMING_2;
-//             }
-//         }
-//         /**
-//          * @brief Cho các ngắt và task hoạt động 
-//          */
-//         allow_interrupts();
-// }
-

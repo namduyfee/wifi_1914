@@ -836,6 +836,10 @@ static inline void firework_config_up_value() {
     if(app_firework.Form.Running == &form_set_type_led) {
         switch(DataSaveRam.LedType) {
             case LED_6803: {
+                firework_set_type_led(LED_1914);
+                break;
+            }
+            case LED_1914: {
                 firework_set_type_led(LED_1903);
                 break;
             }
@@ -869,12 +873,16 @@ static inline void firework_config_up_value() {
 static inline void firework_config_down_value() {
     if(app_firework.Form.Running == &form_set_type_led) {
         switch(DataSaveRam.LedType) {
+            case LED_1914: {
+                firework_set_type_led(LED_6803);
+                break;
+            }
             case LED_6803: {
                 firework_set_type_led(LED_1903);
                 break;
             }
             default : {
-                firework_set_type_led(LED_6803);
+                firework_set_type_led(LED_1914);
                 break;
             }
         }
@@ -1034,7 +1042,6 @@ void firework_form_set_typeled_run(void *arg) {
     switch(DataSaveRam.LedType) {
         case LED_1903:
         case LED_1904: 
-        case LED_1914:
         case LED_1916:
         case LED_9883:
         case LED_8903:
@@ -1046,6 +1053,12 @@ void firework_form_set_typeled_run(void *arg) {
             Application_Led_Config(&led_cot, LED_DUTY_MAX, 500, 0, -1);
             Application_Led_Config(&led_tia, LED_DUTY_MAX, 500, 0, -1);
             
+            break;
+        }
+        case LED_1914: {
+            Application_Led_Config(&led_run, LED_DUTY_MAX, 500, 0, -1);
+            Application_Led_Config(&led_cot, LED_DUTY_MAX, 0, 500, -1);
+            Application_Led_Config(&led_tia, LED_DUTY_MAX, 0, 500, -1);
             break;
         }
         case LED_6803 : {

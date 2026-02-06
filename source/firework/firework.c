@@ -131,14 +131,17 @@ void firework_set_spd_led_expl(uint16_t spd) {
 void firework_set_type_led(uint8_t idx_type) {
     idx_type %= LED_IDX_MAX;
     DataSaveRam.LedType = idx_type;
+
     if(DataSaveRam.LedType == LED_6803) {
-        //led_driver = lpd6803_update;
-        led_driver = ic1914_update; 
+        led_driver = lpd6803_update;
+    }
+    else if(DataSaveRam.LedType == LED_1914) {
+        led_driver = ic1914_update;
     }
     else {
-        //led_driver = ucs1903_update;
-        led_driver = ic1914_update; 
+        led_driver = ucs1903_update;
     }
+    
 }
 void firework_set_state_effect(bool stt) {
     Firework_State.Effect = stt;

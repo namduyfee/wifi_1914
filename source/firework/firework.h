@@ -10,6 +10,7 @@
 
 #include "ezform.h"
 #include "color.h"
+#include "ic1914.h"
 #include "ucs1903.h"
 #include "lpd6803.h"
 #include "audio_generator_wav.h"

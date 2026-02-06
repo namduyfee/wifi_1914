@@ -1,5 +1,5 @@
-#ifndef __IC1914_H
-#define __IC1914_H
+#ifndef IC1914
+#define IC1914
 
 #include <stdint.h>
 #include "color.h"
